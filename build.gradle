@@ -12,10 +12,20 @@ repositories {
         name = "papermc-repo"
         url = "https://repo.papermc.io/repository/maven-public/"
     }
+    maven {
+        name "viaversionEverything"
+        url "https://repo.viaversion.com/everything"
+    }
+
+    maven {
+        name "opencollabRepositoryMavenSnapshots"
+        url "https://repo.opencollab.dev/maven-snapshots"
+    }
 }
 
 dependencies {
-    compileOnly("io.papermc.paper:paper-api:1.21.10-R0.1-SNAPSHOT")
+    compileOnly("io.papermc.paper:paper-api:1.21.10-R0.1-SNAPSHOT")// Paper
+    compileOnly("com.viaversion:viaversion-api:4.0.0-21w16a") // Replace VERSION ViaVersion
 }
 
 tasks {
