@@ -1,0 +1,7 @@
+name: KuraAC
+version: '1.0'
+main: net.chamosmp.kuraac.KuraAC
+api-version: '1.21'
+authors: [ Chamogelastos, Hamstarr ]
+description: Kura Anti Cheat. Built to perform, used in the ChamoSMP
+website: chamosmp.net
