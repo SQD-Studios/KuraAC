@@ -1,7 +1,7 @@
 package net.chamosmp.kuraac;
 
+import io.papermc.paper.command.brigadier.Commands;
 import org.bukkit.plugin.java.JavaPlugin;
-import org.w3c.dom.ls.LSOutput;
 
 public final class KuraAC extends JavaPlugin {
 
@@ -15,5 +15,4 @@ public final class KuraAC extends JavaPlugin {
     public void onDisable() {
         // Plugin shutdown logi
     }
-
 }
