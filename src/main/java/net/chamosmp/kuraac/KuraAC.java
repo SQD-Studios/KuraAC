@@ -1,6 +1,7 @@
 package net.chamosmp.kuraac;
 
 import org.bukkit.plugin.java.JavaPlugin;
+import org.w3c.dom.ls.LSOutput;
 
 public final class KuraAC extends JavaPlugin {
 
@@ -12,6 +13,7 @@ public final class KuraAC extends JavaPlugin {
 
     @Override
     public void onDisable() {
-        // Plugin shutdown logic
+        // Plugin shutdown logi
     }
+
 }

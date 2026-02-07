@@ -26,6 +26,8 @@ repositories {
 dependencies {
     compileOnly("io.papermc.paper:paper-api:1.21.10-R0.1-SNAPSHOT")// Paper
     compileOnly("com.viaversion:viaversion-api:4.0.0-21w16a") // Replace VERSION ViaVersion
+    implementation 'net.kyori:adventure-api:4.26.1' // Adventure API
+    implementation 'net.kyori:adventure-text-minimessage:4.26.1' // Mini Message
 }
 
 tasks {

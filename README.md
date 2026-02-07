@@ -21,5 +21,4 @@ We have 2 main categories of catching cheaters:
 
 
 
-
 ![papermc.net](https://wsrv.nl/?url=https%3A%2F%2Fcdn.jsdelivr.net%2Fnpm%2F%40intergrav%2Fdevins-badges%403%2Fassets%2Fcompact%2Fsupported%2Fpaper_vector.svg&h=48)

@@ -5,3 +5,19 @@ api-version: '1.21'
 authors: [ Chamogelastos, Hamstarr ]
 description: Kura Anti Cheat. Built to perform, used in the ChamoSMP
 website: chamosmp.net
+
+permissions:
+  kuraac.bypass:
+    description: "Bypass KuraAC Checks"
+    default: op
+  kuraac.*:
+    description: "Adds Admin Command Permsissions"
+    default: op
+
+commands:
+  command:
+    description: "This is a command"
+    usage: "/kuraac"
+    aliases: [ka, kac]
+    permission: kuraac.*
+    permission-message: "You do not have permission to use this command"
