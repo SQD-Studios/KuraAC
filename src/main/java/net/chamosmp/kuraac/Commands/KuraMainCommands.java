@@ -8,9 +8,10 @@ public class KuraMainCommands {
 
     public static void register(Commands commands) {
         commands.register(Commands.literal("kuraac")
-                        .then(Commands.literal("kuraac help"))
+                        .then(Commands.literal("help"))
+                        .requires(sender -> sender.getSender().hasPermission("kuraac.*"))
                         .executes(ctx ->{
-                            ctx.getSource().getSender().sendPlainMessage("KuraAC Built To Perform. Do /kuraac help for more info!");
+                            ctx.getSource().getSender().sendPlainMessage("Here is the list of commands:");
                             return Command.SINGLE_SUCCESS;
                         })
 
@@ -20,10 +21,8 @@ public class KuraMainCommands {
                     return Command.SINGLE_SUCCESS;
 
                 })
-                .build());
+                .build()); // WE ARE THEMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
     }
 
 }
-
-
 
