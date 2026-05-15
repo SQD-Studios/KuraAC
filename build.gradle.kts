@@ -1,6 +1,6 @@
 plugins {
     id("java")
-    id("xyz.jpenilla.run-paper") version "2.3.1"
+    id("xyz.jpenilla.run-paper") version "3.0.2"
     id("com.gradleup.shadow") version "9.3.1"
 }
 
@@ -38,38 +38,9 @@ tasks {
         // Configure the Minecraft version for our task.
         // This is the only required configuration besides applying the plugin.
         // Your plugin's jar (or shadowJar if present) will be used automatically.
-        minecraftVersion("1.21.11")
+        minecraftVersion("26.1.2")
     }
 }
-
-/* def targetJavaVersion = 25
-java {
-    def javaVersion = JavaVersion.toVersion(targetJavaVersion)
-    sourceCompatibility = javaVersion
-    targetCompatibility = javaVersion
-    if (JavaVersion.current() < javaVersion) {
-        toolchain.languageVersion = JavaLanguageVersion.of(targetJavaVersion)
-    }
-}
-
-tasks.withType(JavaCompile).configureEach {
-    options.encoding = "UTF-8"
-
-    if (targetJavaVersion >= 10 || JavaVersion.current().isJava10Compatible()) {
-        options.release.set(targetJavaVersion)
-    }
-}
-
-processResources {
-    def props = [version: version]
-    inputs.properties props
-    filteringCharset "UTF-8"
-    filesMatching("paper-plugin.yml") {
-        expand props
-    }
-}
-
- */
 
 tasks.shadowJar {
     configurations = project.configurations.runtimeClasspath.map { setOf(it) }

@@ -1,5 +1,5 @@
 name: KuraAC
-version: '1.0'
+version: ${project.version}
 main: net.chamosmp.kuraac.KuraAC
 api-version: '1.21'
 authors: [ Chamogelastos, Hamstarr ]
@@ -13,17 +13,3 @@ permissions:
   kuraac.*:
     description: "Adds Admin Command Permsissions"
     default: op
-
-commands:
-  command:
-    description: "This is a command"
-    usage: "/kuraac"
-    aliases: [ka, kac]
-    permission: kuraac.*
-    permission-message: "You do not have permission to use this command"
-  Help:
-      description: "Get a list of the KuraAC Commands"
-      usage: "/kuraac help"
-      aliases: [ ka help, kac help ]
-      permission: kuraac.*
-      permission-message: "You do not have permission to use this command"
