@@ -4,8 +4,9 @@ plugins {
     id("com.gradleup.shadow") version "9.3.1"
 }
 
-group "net.chamosmp"
-version "1.0"
+group = "net.chamosmp.kuraac"
+version = "1.0"
+java.sourceCompatibility = JavaVersion.VERSION_25
 
 repositories {
     mavenCentral()
@@ -19,18 +20,16 @@ repositories {
     }
 
     maven {
-        name = "opencollabRepositoryMavenSnapshots"
-        url = uri("https://repo.opencollab.dev/maven-snapshots")
+        url = uri("https://repo.opencollab.dev/main/")
     }
 }
 
 dependencies {
     compileOnly("io.papermc.paper:paper-api:26.1.2.build.+")// Paper
     compileOnly("com.viaversion:viaversion-api:4.0.0-21w16a") // Replace VERSION ViaVersion
-    implementation("net.kyori:adventure-api:4.26.1") // Adventure API
-    implementation("net.kyori:adventure-text-minimessage:4.26.1") // Mini Message
     implementation("org.bstats:bstats-bukkit:3.2.1")  //bStats
-    //paperweight.paperDevBundle("1.21.11-R0.1-SNAPSHOT")
+    compileOnly("org.geysermc.geyser:api:2.9.5-SNAPSHOT") // GeyserMC
+    compileOnly("org.geysermc.floodgate:api:2.2.5-SNAPSHOT")
 }
 
 tasks {
@@ -53,4 +52,15 @@ tasks.shadowJar {
     // Relocate bStats into the plugin's package to avoid conflicts with other
     // plugins using bStats
     relocate("org.bstats", project.group.toString())
+}
+
+//
+tasks.processResources {
+    val props = mapOf("version" to project.version)
+    inputs.properties(props)
+    filteringCharset = "UTF-8"
+
+    filesMatching("paper-plugin.yml") {
+        expand(props)
+    }
 }

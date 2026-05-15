@@ -1,0 +1,22 @@
+enabled: false
+webhook: ""
+
+embed-title: "KuraAC Alert"
+embed-color: "#FF55FF"
+
+# Available placeholders: player, check, violation, version, brand, ping and tps
+check-violation-message:
+  - "**Player**: %player%"
+  - "**Check**: %check%"
+  - "**Violations**: %violations%"
+  - "**Client Version**: %version%"
+  - "**Brand**: %brand%"
+  - "**Ping**: %ping%"
+  - "**TPS**: %tps%"
+
+
+
+
+
+# Do not change, by doing so THIS FILE MAY RESET
+config-version: 1

@@ -21,7 +21,7 @@ public class KuraMainCommands {
                     return Command.SINGLE_SUCCESS;
 
                 })
-                .build()); // WE ARE THEMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+                .build());
     }
 
 }

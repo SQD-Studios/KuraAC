@@ -1,15 +1,19 @@
 name: KuraAC
-version: ${project.version}
+version: ${version}
 main: net.chamosmp.kuraac.KuraAC
 api-version: '1.21'
 authors: [ Chamogelastos, Hamstarr ]
 description: Kura Anti Cheat. Built to perform, used in the ChamoSMP
 website: chamosmp.net
+folia-supported: true
 
 permissions:
   kuraac.bypass:
     description: "Bypass KuraAC Checks"
     default: op
-  kuraac.*:
-    description: "Adds Admin Command Permsissions"
-    default: op
+#dependencies:
+#  bootstrap:
+
+#  server:
+
+default-perm: op
