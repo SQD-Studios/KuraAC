@@ -9,12 +9,15 @@ import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 
 public class UpdateCheck {
-    public void ModrinthVersionCheck(String pluginVer) throws Exception{
+    public void ModrinthVersionCheck(String pluginVer, String projectId) throws Exception{
+        if (projectId == null || projectId.isBlank()) {
+            throw new IllegalArgumentException("projectId must not be null or blank");
+        }
         // Base URL for the API
         String baseUrl = "https://api.modrinth.com/v2";
         HttpClient client = HttpClient.newHttpClient();
         HttpRequest request = HttpRequest.newBuilder()
-                .uri(URI.create(baseUrl + "/project/veinminer/version"))
+                .uri(URI.create(baseUrl + "/project/" + projectId + "/version"))
                 .GET() // Can be left out as GET is the default request type
                 .build();
 
