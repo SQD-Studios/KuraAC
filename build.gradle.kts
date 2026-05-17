@@ -30,6 +30,8 @@ dependencies {
     implementation("org.bstats:bstats-bukkit:3.2.1")  //bStats
     compileOnly("org.geysermc.geyser:api:2.9.5-SNAPSHOT") // GeyserMC
     compileOnly("org.geysermc.floodgate:api:2.2.5-SNAPSHOT")
+    implementation("net.kyori:adventure-api:5.1.1")
+    implementation("net.kyori:adventure-text-minimessage:5.1.1")
 }
 
 tasks {

@@ -11,13 +11,13 @@ public class KuraMainCommands {
                         .then(Commands.literal("help"))
                         .requires(sender -> sender.getSender().hasPermission("kuraac.*"))
                         .executes(ctx ->{
-                            ctx.getSource().getSender().sendPlainMessage("Here is the list of commands:");
+                            ctx.getSource().getSender().sendPlainMessage("Command List:");
                             return Command.SINGLE_SUCCESS;
                         })
 
                 .requires(sender -> sender.getSender().hasPermission("kuraac.*"))
                 .executes(ctx -> {
-                    ctx.getSource().getSender().sendPlainMessage("KuraAC Built To Perform. Do /kuraac help for more info!");
+                    ctx.getSource().getSender().sendRichMessage("<dark_red>Missing arguments.</dark_red>Do /<light_purple>kuraac</light_purple> help to get a list of commands.");
                     return Command.SINGLE_SUCCESS;
 
                 })
