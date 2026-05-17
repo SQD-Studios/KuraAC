@@ -41,6 +41,27 @@ public class UpdateCheck {
             ConsoleLogger.console("You are up to date");
         }
     }
+    private static int parseVersionPart(String part) {
+        if (part == null || part.isEmpty()) {
+            return 0;
+        }
+
+        int end = 0;
+        while (end < part.length() && Character.isDigit(part.charAt(end))) {
+            end++;
+        }
+
+        if (end == 0) {
+            return 0;
+        }
+
+        try {
+            return Integer.parseInt(part.substring(0, end));
+        } catch (NumberFormatException ex) {
+            return 0;
+        }
+    }
+
     public static boolean isNewerVersion(String current, String latest) {
         String[] currentParts = current.split("\\.");
         String[] latestParts = latest.split("\\.");
@@ -51,12 +72,12 @@ public class UpdateCheck {
 
             int currentValue =
                     i < currentParts.length
-                            ? Integer.parseInt(currentParts[i])
+                            ? parseVersionPart(currentParts[i])
                             : 0;
 
             int latestValue =
                     i < latestParts.length
-                            ? Integer.parseInt(latestParts[i])
+                            ? parseVersionPart(latestParts[i])
                             : 0;
 
             if (latestValue > currentValue) {
