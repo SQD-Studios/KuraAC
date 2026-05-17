@@ -14,7 +14,7 @@ public class ConsoleLogger {
 
     public static void console(String message) {
         MiniMessage mm = MiniMessage.miniMessage();
-        Component parsed = mm.deserialize(message);
+        Component parsed = mm.deserialize("<light_purple>KuraAC</light_purple>| " + message);
         Bukkit.getConsoleSender().sendMessage(parsed);
     }
 

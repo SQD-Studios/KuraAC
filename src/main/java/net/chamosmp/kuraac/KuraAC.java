@@ -1,15 +1,27 @@
 package net.chamosmp.kuraac;
 
+import com.fasterxml.jackson.databind.JsonNode;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
 import io.papermc.paper.command.brigadier.Commands;
 import io.papermc.paper.plugin.lifecycle.event.types.LifecycleEvents;
 import net.chamosmp.kuraac.Commands.KuraMainCommands;
 import net.chamosmp.kuraac.Util.ConsoleLogger;
+import net.chamosmp.kuraac.Util.UpdateCheck;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
-import org.jetbrains.annotations.Nullable;
-import org.yaml.snakeyaml.Yaml;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
+import java.net.*;
+import java.net.http.HttpClient;
+import java.net.http.HttpRequest;
+import java.net.http.HttpResponse;
+
 
 public final class KuraAC extends JavaPlugin {
+
+
+
 
 
 
@@ -19,7 +31,14 @@ public final class KuraAC extends JavaPlugin {
         // Plugin startup logic
         String minecraftVersion = Bukkit.getServer().getMinecraftVersion();
 
-        ConsoleLogger.console("<light_purple>KuraAC</light_purple> loaded on " + minecraftVersion );
+        ConsoleLogger.console("Loaded on minecraft version " + minecraftVersion);
+        //ConsoleLogger.console("KuraAC| ");
+        String pluginVer = getPluginMeta().getVersion();
+        try {
+            new UpdateCheck().ModrinthVersionCheck(pluginVer);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
 
 
         // Register commands
@@ -32,8 +51,10 @@ public final class KuraAC extends JavaPlugin {
 
     }
 
+
     @Override
     public void onDisable() {
         // Plugin shutdown logic
+
     }
 }

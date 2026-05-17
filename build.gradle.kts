@@ -32,6 +32,8 @@ dependencies {
     compileOnly("org.geysermc.floodgate:api:2.2.5-SNAPSHOT")
     implementation("net.kyori:adventure-api:5.1.1")
     implementation("net.kyori:adventure-text-minimessage:5.1.1")
+    implementation("com.google.code.gson:gson:2.12.1")
+    implementation("com.fasterxml.jackson.core:jackson-databind:2.18.2")
 }
 
 tasks {
@@ -48,7 +50,7 @@ tasks.shadowJar {
 
     dependencies {
         // Only merge bStats into the final jar, no other dependencies
-        exclude { it.moduleGroup != "org.bstats" }
+        //exclude { it.moduleGroup != "org.bstats" }
     }
 
     // Relocate bStats into the plugin's package to avoid conflicts with other
