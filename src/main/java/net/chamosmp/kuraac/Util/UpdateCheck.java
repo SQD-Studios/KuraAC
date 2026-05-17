@@ -19,6 +19,10 @@ public class UpdateCheck {
                 .build();
 
         HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
+        if (response.statusCode() != 200) {
+            ConsoleLogger.console("Failed to fetch versions. HTTP status: " + response.statusCode());
+            return;
+        }
 
         //System.out.println("Raw Response:");
         //System.out.println(response.body());
