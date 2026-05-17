@@ -1,22 +1,15 @@
 # The anti-cheat made for anything
 
-Use Kura AC to have the best anti-cheat experience for big multiplayer servers
+Use Kura AC to have the best anti-cheat experience made specifically with big servers in mind
 
-## Full Geyser Support (Unofficial)
+### Full Geyser/Floodgate Support
 
-Don't worry about the bedrock player cheating because the AC has got you.
+Don't worry about the bedrock player cheating because the anticheat got you. Needs the floodgate api <br>
+to work
 
-## Via Support (ViaVersion and ViaBackwards)
+### Via Support (ViaVersion and ViaBackwards)
 
 Don't trigger a kick where it doesn't need to.
-
-### How it works
-
-We have 2 main categories of catching cheaters:
-
-1. Predicting with carefully tuned values to catch them before they act
-
-2. Blatant Cheating. Let's be real, if someone is flying and doesn't get killed is cheating
 
 
 
